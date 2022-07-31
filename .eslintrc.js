@@ -5,8 +5,13 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        'plugin:react-hooks/recommended',
+        "plugin:@typescript-eslint/recommended",
+        'plugin:jsx-a11y/recommended',
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -18,8 +23,22 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier",
+        'jsx-a11y',
+        "react-hooks",
+        "import"
     ],
     "rules": {
-    }
+    },
+    settings: {
+        react: {
+            version: 'detect'
+        },
+        "import/resolver": {
+            "typescript": {
+                alwaysTryTypes: true
+            }
+        }
+    },
 }
